@@ -16,9 +16,10 @@ export function Card({ product }: { product: Product }) {
     // };
 
     return (
-        <>
+        <div className="card">
             <h3>{product.name}</h3>
             <p>{product.description}</p>
+            <img src={product.image} alt={product.name} />
             {/* <label htmlFor="completed">Añadir al carrito</label>
             <input
                 checked={product.isCompleted}
@@ -28,6 +29,6 @@ export function Card({ product }: { product: Product }) {
                 onChange={handleChange}
             /> */}
             {/* <button onClick={handleClick}>Delete</button> */}
-        </>
+        </ div>
     );
 }
