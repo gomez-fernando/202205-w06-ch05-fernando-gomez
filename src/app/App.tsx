@@ -13,18 +13,20 @@ import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HttpStoreProducts } from '../services/http.store.product';
 import * as actions from '../reducers/products/action.creators';
+import * as ac from '../reducers/chart/action.creators';
 
 
 function App() {
-    const products = useSelector((state: iState) => state.products);
+    // const products = useSelector((state: iState) => state.products);
     const dispatch = useDispatch();
     const httpStore = useMemo(() => new HttpStoreProducts(), []) ;
 
     useEffect(() => {
         httpStore.getProducts().then((resp) => {
             dispatch(actions.loadProductsAction(resp));
+            dispatch(ac.loadProductsAction([]));
         })
-
+ 
     }, [dispatch, httpStore]);
 
     const HomePage = React.lazy(() => import('../pages/homePage'));
