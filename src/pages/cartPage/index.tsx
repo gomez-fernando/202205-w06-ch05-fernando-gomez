@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Product } from "../../models/product";
-import * as cartAcions from '../../reducers/cart/action.creators';
-import { productReducer } from "../../reducers/products/product.reducer";
+import { cartProduct } from "../../models/cartProduct";
+import * as cartActions from '../../reducers/cart/action.creators';
 import { iState } from "../../store/store";
 
 export default function CartPage(){
@@ -18,8 +17,8 @@ export default function CartPage(){
 
    cart.map(item => totalBought += item.price)
 
-   function deleteFromCart(item: Product): void {
-        dispatch(cartAcions.deleteProductAction(item))
+   function deleteFromCart(item: cartProduct): void {
+        dispatch(cartActions.deleteProductAction(item))
    }
 
 
@@ -29,7 +28,7 @@ export default function CartPage(){
 
             <ul>
                 {cart.map(item => (
-                    <li key={item.id}>
+                    <li key={item.cartId}>
                         <span>{item.name}</span> 
                         <span>Precio {item.price} €</span>
                         <span>

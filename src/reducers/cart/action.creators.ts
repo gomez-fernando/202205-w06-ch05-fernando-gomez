@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { iProduct } from '../../models/product';
+import { cartProduct } from '../../models/cartProduct';
 import { actionTypes } from './action.types';
 
 export interface iAction {
@@ -7,19 +7,19 @@ export interface iAction {
     payload?: any;
 }
 
-export const loadProductsAction = createAction<Array<iProduct>>(
+export const loadProductsAction = createAction<Array<cartProduct>>(
     actionTypes['cart@load']
 );
 
-export const addProductAction = createAction<iProduct>(
+export const addProductAction = createAction<cartProduct>(
     actionTypes['cart@add']
 );
 
-export const updateProductAction = createAction<iProduct>(
+export const updateProductAction = createAction<cartProduct>(
     actionTypes['cart@update']
 );
 
-export const deleteProductAction = createAction<iProduct>(
+export const deleteProductAction = createAction<cartProduct>(
     actionTypes['cart@delete']
 );
 

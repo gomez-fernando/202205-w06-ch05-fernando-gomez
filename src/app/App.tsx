@@ -13,6 +13,7 @@ import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HttpStoreProducts } from '../services/http.store.product';
 import * as productsActions from '../reducers/products/action.creators';
+import * as cartActions from '../reducers/cart/action.creators';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     useEffect(() => {
         httpStore.getProducts().then((resp) => {
             dispatch(productsActions.loadProductsAction(resp));
+            dispatch(cartActions.loadProductsAction([]));
         })
  
     }, [dispatch, httpStore]);

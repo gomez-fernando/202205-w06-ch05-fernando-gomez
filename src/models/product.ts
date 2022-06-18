@@ -9,28 +9,12 @@ export enum categories{
     'coffee' = 'coffee',
      'tea' = 'tea'
 }
-
-export interface iProduct{
-    id: number;
-    price: number;
-    size: sizes;
-    origin: string;
-    image: string;
-    descrption: string;
-    catefory: categories;
-    cartId: number;
-}
-
 export class Product{
 
-    static generateId(): number {
-        return Math.ceil(Math.random() * 100_000);
-    }
-
-    id: number;
     promo: boolean;
 
     constructor(
+        public id: number,
         public price: number,
         public name: string,
         public size: sizes,
@@ -39,7 +23,6 @@ export class Product{
         public description: string,
         public category: categories
     ){
-        this.id = Product.generateId();
         this.promo = false;
     }
 }
