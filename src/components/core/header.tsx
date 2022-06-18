@@ -5,8 +5,7 @@ import * as actions from '../../reducers/chart/action.creators'
 import { iState, store } from '../../store/store';
 
 export function Header({ options }: { options: aMenuItems }) {
-    // const dispatch = useDispatch();
-    // dispatch(actions.loadProductsAction([]));
+   
 
     const chart = useSelector((state: iState) => state.chart);
 

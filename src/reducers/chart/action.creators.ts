@@ -7,19 +7,19 @@ export interface iAction {
     payload?: any;
 }
 
-export const loadProductsChartAction = createAction<Array<Product>>(
-    actionTypes['product@load']
+export const loadProductsAction = createAction<Array<Product>>(
+    actionTypes['chart@load']
 );
 
-export const addProductChartAction = createAction<Product>(
-    actionTypes['product@add']
+export const addProductAction = createAction<Product>(
+    actionTypes['chart@add']
 );
 
-export const updateProductChartAction = createAction<Product>(
-    actionTypes['product@update']
+export const updateProductAction = createAction<Product>(
+    actionTypes['chart@update']
 );
 
-export const deleteProductChartAction = createAction<Product>(
-    actionTypes['product@delete']
+export const deleteProductAction = createAction<Product>(
+    actionTypes['chart@delete']
 );
 
