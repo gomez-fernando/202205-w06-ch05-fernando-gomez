@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { Product } from '../models/product';
+import { categories, Product, sizes } from '../models/product';
 import { chartReducer } from '../reducers/chart/chart.reducer';
 import { productReducer } from '../reducers/products/product.reducer';
 

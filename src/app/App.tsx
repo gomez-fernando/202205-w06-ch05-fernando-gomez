@@ -12,8 +12,7 @@ import { iState } from '../store/store';
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HttpStoreProducts } from '../services/http.store.product';
-import * as actions from '../reducers/products/action.creators';
-import * as ac from '../reducers/chart/action.creators';
+import * as productsActions from '../reducers/products/action.creators';
 
 
 function App() {
@@ -23,11 +22,12 @@ function App() {
 
     useEffect(() => {
         httpStore.getProducts().then((resp) => {
-            dispatch(actions.loadProductsAction(resp));
-            // dispatch(ac.loadProductsChartAction([]));
+            dispatch(productsActions.loadProductsAction(resp));
         })
  
     }, [dispatch, httpStore]);
+
+    
 
     const HomePage = React.lazy(() => import('../pages/homePage'));
     const CoffePage = React.lazy(() => import('../pages/coffeePage'));

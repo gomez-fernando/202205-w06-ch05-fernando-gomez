@@ -1,6 +1,6 @@
 export enum actionTypes {
-    'product@add' = 'product@add',
-    'product@delete' = 'product@delete',
-    'product@update' = 'product@update',
-    'product@load' = 'product@load'
+    'chart@add' = 'chart@add',
+    'chart@delete' = 'chart@delete',
+    'chart@update' = 'chart@update',
+    'chart@load' = 'chart@load'
 }
