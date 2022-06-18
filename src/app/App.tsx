@@ -8,11 +8,31 @@ import {
 import { Layout } from '../components/core/layout';
 import { aMenuItems } from '../interfaces/menu-items';
 import * as React from 'react';
-// import { HomePage } from '../pages/homePage';
-// import { GotContextProvider } from './context/got-provider';
-// import { TodoContextProvider } from './context/todo-provider';
+import { iState } from '../store/store';
+import { useEffect, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { HttpStoreProducts } from '../services/http.store.product';
+import * as actions from '../reducers/action.creators'
+
 
 function App() {
+    const products = useSelector((state: iState) => state.products);
+    const dispatch = useDispatch();
+    const httpStore = useMemo(() => new HttpStoreProducts(), []) ;
+
+    useEffect(() => {
+        httpStore.getProducts().then((resp) => {
+            dispatch(actions.loadProductsAction(resp));
+            // console.log(products);
+            console.log(resp);
+        })
+
+    }, [dispatch, httpStore]);
+
+    console.log(products);
+
+
+    
     const HomePage = React.lazy(() => import('../pages/homePage'));
     const CoffePage = React.lazy(() => import('../pages/coffeePage'));
     const TeaPage = React.lazy(() => import('../pages/teaPage'));
@@ -30,19 +50,15 @@ function App() {
         <Router>
             <Layout options={options}>
                 <React.Suspense>
-                    {/* <GotContextProvider>
-                        <TodoContextProvider> */}
-                            <Routes>
-                                {options.map((item) => (
-                                    <Route
-                                        key={item.label}
-                                        path={item.path}
-                                        element={item.page}
-                                    ></Route>
-                                ))}
-                            </Routes>
-                        {/* </TodoContextProvider>
-                    </GotContextProvider> */}
+                    <Routes>
+                        {options.map((item) => (
+                            <Route
+                                key={item.label}
+                                path={item.path}
+                                element={item.page}
+                            ></Route>
+                        ))}
+                    </Routes>
                 </React.Suspense>
             </Layout>
         </Router>
