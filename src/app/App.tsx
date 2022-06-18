@@ -24,7 +24,7 @@ function App() {
     useEffect(() => {
         httpStore.getProducts().then((resp) => {
             dispatch(actions.loadProductsAction(resp));
-            dispatch(ac.loadProductsAction([]));
+            // dispatch(ac.loadProductsChartAction([]));
         })
  
     }, [dispatch, httpStore]);

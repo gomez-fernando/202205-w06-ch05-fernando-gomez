@@ -10,19 +10,19 @@ const initialState: Array<Product> = [];
 
 export const chartReducer = createReducer(initialState, (builder) => {
     return builder
-        .addCase(ac.loadProductsAction, (state, action) => [
+        .addCase(ac.loadProductsChartAction, (state, action) => [
             ...action.payload,
         ])
-        .addCase(ac.addProductAction, (state, action) => [
+        .addCase(ac.addProductChartAction, (state, action) => [
             ...state,
             action.payload,
         ])
-        .addCase(ac.updateProductAction, (state, action) =>
+        .addCase(ac.updateProductChartAction, (state, action) =>
             state.map((item) =>
                 item.id === action.payload.id ? action.payload : item
             )
         )
-        .addCase(ac.deleteProductAction, (state, action) =>
+        .addCase(ac.deleteProductChartAction, (state, action) =>
             state.filter((item) => item.id !== action.payload.id)
         )
         .addDefaultCase((state) => state);
