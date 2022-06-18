@@ -3,7 +3,7 @@ import { aMenuItems } from '../../interfaces/menu-items';
 
 export function Menu({ options }: { options: aMenuItems }) {
     return (
-        <nav>
+        <nav className="nav-menu">
             <ul>
                 {options.map((item) => (
                     <li key={item.label}>

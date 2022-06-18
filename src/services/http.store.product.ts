@@ -8,7 +8,6 @@ export class HttpStoreProducts {
     async getProducts(): Promise<Array<Product>> {
         // GET
         const resp = await fetch(this.url);
-        console.log(resp.status);
         return await resp.json();
     }
     async getProduct(id: Product['id']): Promise<Product> {

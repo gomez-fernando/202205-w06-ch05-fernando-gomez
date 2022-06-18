@@ -12,7 +12,7 @@ describe("Given the productReducer", () => {
       origin: 'India',
       image: 'image.png',
       description: 'lo mejor de la cosecha',
-      category: categories.coffe
+      category: categories.coffee
     };
 
     describe("When we use the loadProducts function", () => {
@@ -33,7 +33,7 @@ describe("Given the productReducer", () => {
         test("Then it should add the newProduct", () => {
           const initialState: Array<Product> = [mockProduct];
 
-          const newProduct = { ...mockProduct, id: 2, promo: true, category: categories.coffe };
+          const newProduct = { ...mockProduct, id: 2, promo: true, category: categories.coffee };
           
           const newState = productReducer(
             initialState,
