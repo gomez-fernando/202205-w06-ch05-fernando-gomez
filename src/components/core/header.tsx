@@ -1,15 +1,16 @@
 import { Menu } from './menu';
 import { aMenuItems } from '../../interfaces/menu-items';
 import { useDispatch, useSelector } from 'react-redux';
-import * as actions from '../../reducers/chart/action.creators'
+import * as actions from '../../reducers/cart/action.creators'
 import { iState, store } from '../../store/store';
+import { Link } from 'react-router-dom';
 
 export function Header({ options }: { options: aMenuItems }) {
    
 
-    const chart = useSelector((state: iState) => state.chart);
+    const cart = useSelector((state: iState) => state.cart);
 
-    console.log(chart);
+    console.log(cart);
 
     const title = 'ISDI - Coffee';
     return (
@@ -19,13 +20,9 @@ export function Header({ options }: { options: aMenuItems }) {
                 <Menu options={options}></Menu>
             </header>
 
-            <div className="chat info">
-                <p>
-                    {
-                        JSON.stringify(chart)
-                    }
-                </p>
-            </div>
+            <Link to={`/cart`} >
+                    <button>Ver carrito</button>
+            </Link>
         </>
 
         

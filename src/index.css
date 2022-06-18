@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.nav-menu>ul li:nth-last-child(-n+2){
+.nav-menu>ul li:nth-last-child(-n+3){
     display: none;
 }
 

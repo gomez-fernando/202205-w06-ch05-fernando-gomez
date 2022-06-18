@@ -1,5 +1,5 @@
 import { Product, categories, sizes } from "../models/product";
-import { productReducer } from "./chart.reducer";
+import { productReducer } from "./cart.reducer";
 import * as actions from './action.creators'
 
 describe("Given the productReducer", () => {

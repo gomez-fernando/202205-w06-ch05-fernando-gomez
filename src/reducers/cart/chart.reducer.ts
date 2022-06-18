@@ -3,12 +3,12 @@
 // retorna un NUEVO estado (NO HAY MUTACION)
 
 import { createReducer } from '@reduxjs/toolkit';
-import { Product } from '../../models/product';
+import { iProduct } from '../../models/product';
 import * as ac from './action.creators'
 
-const initialState: Array<Product> = [];
+const initialState: Array<iProduct> = [];
 
-export const chartReducer = createReducer(initialState, (builder) => {
+export const cartReducer = createReducer(initialState, (builder) => {
     return builder
         .addCase(ac.loadProductsAction, (state, action) => [
             

@@ -10,6 +10,17 @@ export enum categories{
      'tea' = 'tea'
 }
 
+export interface iProduct{
+    id: number;
+    price: number;
+    size: sizes;
+    origin: string;
+    image: string;
+    descrption: string;
+    catefory: categories;
+    cartId: number;
+}
+
 export class Product{
 
     static generateId(): number {

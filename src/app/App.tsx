@@ -33,12 +33,14 @@ function App() {
     const CoffePage = React.lazy(() => import('../pages/coffeePage'));
     const TeaPage = React.lazy(() => import('../pages/teaPage'));
     const DetailsPage = React.lazy(() => import('../pages/detailsPage'));
+    const CartPage = React.lazy(() => import('../pages/cartPage'));
 
     const options: aMenuItems = [
         { path: '', label: 'Home - Ofertas', page: <HomePage /> },
         { path: 'coffee', label: 'Cafés', page: <CoffePage /> },
         { path: 'tea', label: 'Tés', page: <TeaPage /> },
         { path: 'details/:id', label: 'Producto', page: <DetailsPage /> },
+        { path: 'cart', label: 'Carrito', page: <CartPage /> },
         { path: '*', label: '', page: <Navigate replace to="" /> },
     ];
 
