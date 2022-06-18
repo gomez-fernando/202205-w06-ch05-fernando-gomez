@@ -22,7 +22,7 @@ export const productReducer = createReducer(initialState, (builder) => {
                 item.id === action.payload.id ? action.payload : item
             )
         )
-        .addCase(ac.deleteProductAction, (state, action) =>
+        .addCase(ac.deleteProductAction, (state, action) => 
             state.filter((item) => item.id !== action.payload.id)
         )
         .addDefaultCase((state) => state);
