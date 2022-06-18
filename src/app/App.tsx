@@ -12,7 +12,7 @@ import { iState } from '../store/store';
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HttpStoreProducts } from '../services/http.store.product';
-import * as actions from '../reducers/action.creators';
+import * as actions from '../reducers/products/action.creators';
 
 
 function App() {

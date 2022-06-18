@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import * as actions from '../../reducers/action.creators';
+import * as actions from '../../reducers/products/action.creators';
 import { iState } from "../../store/store";
 
 export default function DetailsPage(){
