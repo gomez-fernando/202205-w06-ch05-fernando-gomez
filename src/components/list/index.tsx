@@ -1,15 +1,13 @@
 import { useSelector } from "react-redux";
+import { Product } from "../../models/product";
 import { iState } from "../../store/store";
 import { Card } from "../card";
 
-export function List() {
-    // const products = useSelector((state: iState) => state.products);
-    const products = useSelector((state: iState) => state.products)
-                        .filter(product => product.promo === true);
+export function List({products}: {products: Product[]}) {
+   
 
     return (
         <>
-            <p>Context-list</p>
             <ul>
                 {products.map((product) => (
                     <li key={product.id}>

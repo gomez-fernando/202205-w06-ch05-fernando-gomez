@@ -1,9 +1,13 @@
 export enum sizes{
-    'S', 'M', 'L', 'XL'
+    'S' = 'S', 
+    'M' = 'M', 
+    'L' = 'L', 
+    'XL' = 'XL'
 }
 
 export enum categories{
-    'coffe', 'tea'
+    'coffee' = 'coffee',
+     'tea' = 'tea'
 }
 
 export class Product{
