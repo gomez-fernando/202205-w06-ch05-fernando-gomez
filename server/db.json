@@ -1,0 +1,26 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Té",
+            "promo": false,
+            "price": 2,
+            "size": "S",
+            "origin": "India",
+            "image": "image.png",
+            "description": "Lo mejor de la cosecha",
+            "category": "tea"
+        },
+        {
+            "id": 2,
+            "name": "Café",
+            "promo": false,
+            "price": 3,
+            "size": "M",
+            "origin": "México",
+            "image": "image2.png",
+            "description": "El sabor de México",
+            "category": "coffee"
+        }
+    ]
+}
