@@ -6,6 +6,7 @@ describe("Given the productReducer", () => {
     const mockProduct = {
         id: 1,
         promo: false,
+        name: "Café",
       price: 10,
       size: sizes.S,
       origin: 'India',

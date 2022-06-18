@@ -15,14 +15,17 @@ import * as React from 'react';
 function App() {
     const HomePage = React.lazy(() => import('../pages/homePage'));
     const CoffePage = React.lazy(() => import('../pages/coffeePage'));
+    const TeaPage = React.lazy(() => import('../pages/teaPage'));
+    const DetailsPage = React.lazy(() => import('../pages/detailsPage'));
 
     const options: aMenuItems = [
         { path: '', label: 'Home - Ofertas', page: <HomePage /> },
         { path: 'coffee', label: 'Cafés', page: <CoffePage /> },
+        { path: 'tea', label: 'Tés', page: <TeaPage /> },
+        { path: 'details/:id', label: 'Producto', page: <DetailsPage /> },
         { path: '*', label: '', page: <Navigate replace to="" /> },
     ];
 
-    console.log(options);
     return (
         <Router>
             <Layout options={options}>

@@ -17,6 +17,7 @@ export class Product{
 
     constructor(
         public price: number,
+        public name: string,
         public size: sizes,
         public origin: string,
         public image: string,
