@@ -33,5 +33,6 @@ describe('When render the Header component', () => {
 
         const button = screen.getByRole('button');
         expect(button).toBeInTheDocument();
+        expect(screen.getByText(/Hello!/i)).toBeInTheDocument();
     });
 });
