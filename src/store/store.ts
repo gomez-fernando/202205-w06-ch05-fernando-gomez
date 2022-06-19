@@ -12,7 +12,7 @@ export interface iState {
     cartId: number
 }
 
-const preloadedState = {
+const preloadedState: iState = {
     products: [] as Array<Product>,
     cart: [] as Array<cartProduct>,
     cartId: 0 as number
