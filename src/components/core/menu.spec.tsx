@@ -14,7 +14,7 @@ const options: aMenuItems = [
     { path: 'coffee', label: 'Cafés', page: <CoffePage /> },
 ];
 
-describe('When render the Header component', () => {
+describe('When render the Menu component', () => {
     test('Renders navigation links', () => {
         const preloadedState = {
             

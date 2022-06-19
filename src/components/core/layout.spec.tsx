@@ -22,7 +22,7 @@ const children = (): ReactElement => {
         </div>
     )
 }
-describe('When render the Header component', () => {
+describe('When render the Layout component', () => {
     test('Renders navigation links', () => {
         const preloadedState = {};
         render(
