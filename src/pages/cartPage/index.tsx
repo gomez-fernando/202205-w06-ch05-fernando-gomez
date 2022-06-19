@@ -36,9 +36,6 @@ export default function CartPage(){
             }
         })
     })
-    setTimeout(() => {
-        console.log(products);
-    }, 2000);
    }
 
 
