@@ -21,8 +21,8 @@ export default function DetailsPage(){
     const inCartProducts = useSelector((state: iState) => state.cart)
                             .filter(product => product.id === id).length;
 
-    console.log(inCartProducts);
-    console.log(product.stock);
+    // console.log(inCartProducts);
+    // console.log(product.stock);
 
 
 
@@ -51,7 +51,9 @@ export default function DetailsPage(){
 
 
     return (
+        
         <div className="details">
+            <h1>Carrito</h1>
             <h1>{product.name}</h1>
 
             <p>{product.description}</p>

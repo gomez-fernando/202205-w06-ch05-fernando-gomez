@@ -1,19 +1,19 @@
 import { screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { render } from '../services/test-utils';
-import { store } from '../store/store';
-import TeaPage from './teaPage';
+import DetailsPage from './';
+import { render } from '../../services/test-utils';
+import { store } from '../../store/store';
 
 
-describe('When render the TeaPage component', () => {
+describe('When render the DetailsPage component', () => {
     test('Renders the h1', () => {
         const preloadedState = {};
         render(
             <BrowserRouter>
-                <TeaPage  />
+                <DetailsPage  />
             </BrowserRouter>,
             { preloadedState, store }
          );
-        expect(screen.getByText(/Nuestros tés/i)).toBeInTheDocument();
+        expect(screen.getByText(/Carrito/i)).toBeInTheDocument();
     });
 });

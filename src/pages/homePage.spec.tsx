@@ -5,7 +5,7 @@ import { store } from '../store/store';
 import HomePage from './homePage';
 
 
-describe('When render the CoffePage component', () => {
+describe('When render the HomePage component', () => {
     test('Renders the h1', () => {
         const preloadedState = {};
         render(
