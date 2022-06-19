@@ -1,12 +1,12 @@
-import { categories, Product, sizes } from "./product";
+import { cartProduct } from "./cartProduct";
+import { categories, sizes } from "./product";
 
 
-describe('Given the class Product', () => {
+describe('Given the class cartProduct', () => {
     describe('When we instantiate an object', () => {
         test(`Then the created object should 
         have the product and count properties:`, () => {
-            const product = new Product(
-                1,
+            const product = new cartProduct(
                 10,
                 "Café",
                 sizes.S,
@@ -14,9 +14,11 @@ describe('Given the class Product', () => {
                 'image.png',
                 'lo mejor de la cosecha',
                 categories.coffee,
-                200
+                200,
+                1,
+                false
             );
-            expect(product).toBeInstanceOf(Product);
+            expect(product).toBeInstanceOf(cartProduct);
             expect(product).toHaveProperty('promo');
             expect(product).toHaveProperty('name');
         });
