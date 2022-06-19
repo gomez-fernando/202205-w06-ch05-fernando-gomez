@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import CartPage from './';
+import CartPage from '.';
 import { categories, sizes } from '../../models/product';
 import { render } from '../../services/test-utils';
 import { store } from '../../store/store';
