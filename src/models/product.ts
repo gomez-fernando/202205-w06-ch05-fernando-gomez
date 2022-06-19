@@ -21,7 +21,8 @@ export class Product{
         public origin: string,
         public image: string,
         public description: string,
-        public category: categories
+        public category: categories,
+        public stock: number
     ){
         this.promo = false;
     }

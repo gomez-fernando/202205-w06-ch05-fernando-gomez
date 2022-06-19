@@ -1,9 +1,12 @@
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { setSyntheticLeadingComments } from "typescript";
 import { cartProduct } from "../../models/cartProduct";
 import * as cartActions from '../../reducers/cart/action.creators';
 import * as idActions from '../../reducers/cartId/action.creators'
 import { productReducer } from "../../reducers/products/product.reducer";
+import { HttpStoreProducts } from "../../services/http.store.product";
 import { iState } from "../../store/store";
 
 export default function DetailsPage(){
@@ -15,21 +18,35 @@ export default function DetailsPage(){
                         .filter(product => product.id === id)[0];
     const cartId = useSelector((state: iState) => state.cartId)
 
-    function addToCart(){
-        dispatch(cartActions.addProductAction({...new cartProduct(
-            product.price, 
-            product.name, 
-            product.size,
-            product.origin,
-            product.image,
-            product.description,
-            product.category,
-            product.id,
-            cartId + 1,
-            product.promo
-             )}));
+    const inCartProducts = useSelector((state: iState) => state.cart)
+                            .filter(product => product.id === id).length;
 
-        dispatch(idActions.idIncrement(cartId));
+    console.log(inCartProducts);
+    console.log(product.stock);
+
+
+
+    function addToCart(){
+        if(product.stock > inCartProducts){
+            dispatch(cartActions.addProductAction({...new cartProduct(
+                product.price, 
+                product.name, 
+                product.size,
+                product.origin,
+                product.image,
+                product.description,
+                product.category,
+                product.id,
+                cartId + 1,
+                product.promo
+                 )}));
+    
+    
+            dispatch(idActions.idIncrement());
+        } else {
+            alert('Lo sentimos, ya no quedan unidades en stock')
+        }
+       
     }
 
 
