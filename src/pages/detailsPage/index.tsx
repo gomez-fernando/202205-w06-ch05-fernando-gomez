@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { setSyntheticLeadingComments } from "typescript";
 import { cartProduct } from "../../models/cartProduct";
 import * as cartActions from '../../reducers/cart/action.creators';
-import * as idActions from '../../reducers/cartId/action.creators'
+import * as idActions from '../../reducers/cartId/action.creators';
 import { productReducer } from "../../reducers/products/product.reducer";
 import { HttpStoreProducts } from "../../services/http.store.product";
 import { iState } from "../../store/store";
@@ -44,7 +44,7 @@ export default function DetailsPage(){
     
             dispatch(idActions.idIncrement());
         } else {
-            alert('Lo sentimos, ya no quedan unidades en stock')
+            alert('Lo sentimos, ya no quedan unidades en stock');
         }
        
     }
@@ -63,7 +63,7 @@ export default function DetailsPage(){
             />
 
             <button
-                onClick={() => addToCart()}
+                onClick={addToCart}
             >
                 Añadir al carrito
             </button>

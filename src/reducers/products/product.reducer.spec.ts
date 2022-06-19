@@ -16,23 +16,23 @@ const mockProduct: Product = {
   stock: 200
 };
 
-const newProduct = { ...mockProduct, id: 2, promo: true, category: categories.coffee };
+const newProduct: Product = { ...mockProduct, id: 2, promo: true, category: categories.coffee };
 
 describe("Given the productReducer", () => {
     
 
-    describe("When we use the loadProducts function", () => {
+    describe("When we use the loadProducts action", () => {
       test("Then it should load the mockProduct in the array", () => {
         const initialState: Array<Product> = [];
 
         const newState = productReducer(
           initialState,
-          actions.loadProductsAction([mockProduct])
+          actions.loadProductsAction([mockProduct, newProduct])
         );
   
-        expect(newState).toHaveLength(1);
-        expect(Array.isArray(newState)).toBe(true)
-        expect(newState).toStrictEqual([mockProduct]);
+        expect(newState).toHaveLength(2);
+        expect(Array.isArray(newState)).toBe(true);
+        expect(newState).toStrictEqual([mockProduct, newProduct]);
         expect(newState.find(item => item.id ===  1) ).toStrictEqual(mockProduct);
         expect(newState.find((item) => item.id === 1)?.promo).toBe(false);
         expect(newState[0].promo).toBe(false);

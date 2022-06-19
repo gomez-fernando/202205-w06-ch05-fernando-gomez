@@ -8,9 +8,6 @@ import { Link } from 'react-router-dom';
 export function Header({ options }: { options: aMenuItems }) {
    
 
-    // const cart = useSelector((state: iState) => state.cart);
-    
-
     const title = 'ISDI - Coffee';
     return (
         <>

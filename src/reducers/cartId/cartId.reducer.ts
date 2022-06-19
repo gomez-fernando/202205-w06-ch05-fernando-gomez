@@ -4,9 +4,7 @@
 
 import { createReducer } from '@reduxjs/toolkit';
 import * as ac from './action.creators'
-import { actionTypes } from './action.types';
 
-// const initialState: Array<cartProduct> = [];
 const  initialState: number = 0;
 
 export const cartIdReducer = createReducer(initialState, (builder) => {
