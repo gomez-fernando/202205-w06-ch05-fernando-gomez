@@ -39,6 +39,6 @@ export class HttpStoreProducts {
         // DELETE
         return fetch(this.url + `/${id}`, {
             method: 'DELETE',
-        }).then((response) => response.status);
+        }).then((response) => response.json());
     }
 }
