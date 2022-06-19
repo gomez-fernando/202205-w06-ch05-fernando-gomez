@@ -22,7 +22,7 @@ const products: cartProduct[] = [
 ];
 
 
-describe('When render the List component', () => {
+describe('When render the CartPage component', () => {
     test('Renders name of a product', () => {
         const preloadedState = {
             products
