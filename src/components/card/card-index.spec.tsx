@@ -1,26 +1,14 @@
 import { screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { List } from './';
+import { Card } from '.';
 import { categories, sizes } from '../../models/product';
 import { render } from '../../services/test-utils';
 import { store } from '../../store/store';
 
-const products = [
+const product = 
     {
         id: 1,
         promo: false,
-        name: "Café",
-      price: 10,
-      size: sizes.S,
-      origin: 'India',
-      image: 'image.png',
-      description: 'lo mejor de la cosecha',
-      category: categories.coffee,
-      stock: 200
-    },
-    {
-        id: 2,
-        promo: true,
         name: "Mock name",
       price: 10,
       size: sizes.S,
@@ -29,17 +17,15 @@ const products = [
       description: 'lo mejor de la cosecha',
       category: categories.coffee,
       stock: 200
-    }
-]
+};  
+
 
 describe('When render the List component', () => {
     test('Renders name of a product', () => {
-        const preloadedState = {
-            
-        };
+        const preloadedState = {};
         render(
             <BrowserRouter>
-                <List products={products}  />
+                <Card product={product}  />
             </BrowserRouter>,
             { preloadedState, store }
          );
