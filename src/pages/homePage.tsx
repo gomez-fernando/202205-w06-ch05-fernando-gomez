@@ -7,6 +7,8 @@ export default function HomePage(){
     const products = useSelector((state: iState) => state.products)
     .filter(product => product.promo === true);
 
+    console.log(products);
+
     return (
         <>
             <h1>Nuestras ofertas</h1>

@@ -1,15 +1,18 @@
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { cartProduct } from "../../models/cartProduct";
 import * as cartActions from '../../reducers/cart/action.creators';
+import * as prodActions from '../../reducers/products/action.creators'
+import { HttpStoreProducts } from "../../services/http.store.product";
 import { iState } from "../../store/store";
 
 export default function CartPage(){
-    const  obj  = useParams();
-    const id = Number(obj.id);
     const dispatch = useDispatch();
+    const httpStore = useMemo(() => new HttpStoreProducts(), []) ;
+
 
     const cart = useSelector((state: iState) => state.cart);
+    const products = useSelector((state: iState) => state.products);
 
    console.log(cart);
 
@@ -19,6 +22,23 @@ export default function CartPage(){
 
    function deleteFromCart(item: cartProduct): void {
         dispatch(cartActions.deleteProductAction(item))
+   }
+
+   const buy = () => {
+    dispatch(cartActions.loadProductsAction([]))
+    cart.forEach((item) => {
+        products.forEach(prod => {
+            if (prod.id === item.id){
+                console.log(prod.stock);
+
+                dispatch(prodActions.updateProductAction({...prod, stock: 0}))
+                // dispatch(prodActions.deleteProductAction(prod))
+            }
+        })
+    })
+    setTimeout(() => {
+        console.log(products);
+    }, 2000);
    }
 
 
@@ -38,13 +58,21 @@ export default function CartPage(){
                                 Eliminar
                             </button>
                         </span>
+                       
                     </li>
                 ))}
             </ul>
 
             <p>
-                Total: {totalBought} €
+                Total: {totalBought.toFixed(2)} €
             </p>
+            <span>
+                <button
+                    onClick={buy}
+                >
+                    Comprar..
+                </button>
+            </span>
         
         </div>
     )

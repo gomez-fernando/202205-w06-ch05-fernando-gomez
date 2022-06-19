@@ -7,7 +7,7 @@ export interface iAction {
     payload?: any;
 }
 
-export const idIncrement = createAction<number>(
+export const idIncrement = createAction(
     actionTypes['cartId@add']
 );
 

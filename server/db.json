@@ -9,7 +9,8 @@
             "origin": "Colombia",
             "image": "https://cc1.cafetearte.es/2298-home_default/cafe-colombia.jpg",
             "description": "El más conocido de los mejores cafés suaves del mundo. Extraordinaria calidad, aroma perfumado y frutoso, cuerpo ligero y con un punto de acidez.",
-            "category": "coffee"
+            "category": "coffee",
+            "stock": 3
         },
         {
             "id": 2,
@@ -20,7 +21,8 @@
             "origin": "México",
             "image": "https://cc1.cafetearte.es/3950-thickbox_default/pack-cafes-aromatizados.jpg",
             "description": "Disfruta de los cafés aromatizados con este pack compuesto por los sabores preferidos de nuestros clientes.",
-            "category": "coffee"
+            "category": "coffee",
+            "stock": 3
         },
         {
             "id": 3,
@@ -31,7 +33,8 @@
             "origin": "India",
             "image": "https://cc1.cafetearte.es/2908-thickbox_default/unicornio.jpg",
             "description": "Llena tu hogar de fantasía con esta deliciosa y original mezcla de frutas.",
-            "category": "tea"
+            "category": "tea",
+            "stock": 3
         },
         {
             "id": 4,
@@ -42,7 +45,8 @@
             "origin": "Honduras",
             "image": "https://cc1.cafetearte.es/2805-thickbox_default/cesta-rooibos.jpg",
             "description": "La cesta de Rooibos está hecha pensando en quienes buscan una bebida que les permita unos minutos de tranquilidad y con diferente sabor cada día. Su bonita presentación la convierte en un obsequio diferente y muy original.",
-            "category": "tea"
+            "category": "tea",
+            "stock": 3
         }
     ]
 }
