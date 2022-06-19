@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { render } from '../services/test-utils';
 import { store } from '../store/store';
-import CoffeePage from './coffeePage';
+import HomePage from './homePage';
 
 
 describe('When render the CoffePage component', () => {
@@ -10,10 +10,10 @@ describe('When render the CoffePage component', () => {
         const preloadedState = {};
         render(
             <BrowserRouter>
-                <CoffeePage  />
+                <HomePage  />
             </BrowserRouter>,
             { preloadedState, store }
          );
-        expect(screen.getByText(/Nuestros cafés/i)).toBeInTheDocument();
+        expect(screen.getByText(/Nuestras ofertas/i)).toBeInTheDocument();
     });
 });
