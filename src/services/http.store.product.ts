@@ -15,21 +15,21 @@ export class HttpStoreProducts {
         const resp = await fetch(this.url + `/${id}`);
         return await resp.json();
     }
-    setProduct(task: Product): Promise<Product> {
+    setProduct(product: Product): Promise<Product> {
         // POST
         return fetch(this.url, {
             method: 'POST',
-            body: JSON.stringify(task),
+            body: JSON.stringify(product),
             headers: {
                 'Content-Type': 'application/json',
             },
         }).then((response) => response.json());
     }
-    updateProduct(task: Product): Promise<Partial<Product>> {
+    updateProduct(product: Product): Promise<Partial<Product>> {
         // PUT / PATCH
-        return fetch(this.url + `/${task.id}`, {
+        return fetch(this.url + `/${product.id}`, {
             method: 'PATCH',
-            body: JSON.stringify(task),
+            body: JSON.stringify(product),
             headers: {
                 'Content-Type': 'application/json',
             },

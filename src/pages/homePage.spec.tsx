@@ -33,7 +33,7 @@ const products: Array<Product> = [
         size: sizes.S,
         origin: 'India',
         image: 'image.png',
-        description: 'lo mejor de la cosecha',
+        description: 'Té de India',
         category: categories.tea,
         stock: 200
     },
@@ -71,8 +71,8 @@ describe('Given the HomePage component', () => {
     describe('When calling it', () => {
         beforeEach(() => {
             (useSelector as jest.Mock).mockImplementation(() => products);
-            // (useSelector as jest.Mock).mockImplementation(() => cart);
-            // (useSelector as jest.Mock).mockImplementation(() => cartId);
+            (useSelector as jest.Mock).mockImplementation(() => cart);
+            (useSelector as jest.Mock).mockImplementation(() => cartId);
         });
         afterEach(() => {
             (useSelector as jest.Mock).mockClear();
@@ -91,8 +91,6 @@ describe('Given the HomePage component', () => {
             );
             const testElement = screen.getByText(/Café/i);
             expect(testElement).toBeInTheDocument();
-            const testElement2 = screen.getByText(/Té/i);
-            expect(testElement2).toBeInTheDocument();
         });
     });
 });
